@@ -155,8 +155,8 @@ angular.module('starter.services', [])
         detkelas: function (kel,jur){
             return $http.get(baseUrl+'detkel.php?kel='+kel); 
         },
-        listnilai: function (kel,nis){
-        return $http.get(baseUrl+'listnilai.php?kel='+kel+'&nis='+nis); 
+        listnilai: function (kel,nis, jur){
+        return $http.get(baseUrl+'listnilai.php?kel='+kel+'&nis='+nis+'&jur='+jur); 
         },
         dapel: function (nis,jur){
             return $http.get(baseUrl+'dapel.php?nig='+nis+'&jur='+jur); 

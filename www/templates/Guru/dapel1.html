@@ -40,7 +40,7 @@
           <div class="col" style="border: solid 1px grey;">Hari</div>
          
         </div>
-    <ion-scroll direction="xy" id="map_content">
+    <ion-scroll direction="xy" style="margin-bottom:100px;height: 60%;">
         <div class="row" ng-repeat="data in lskelas | filter:searchFilter" ui-sref="guru.rekap({kelas:data.KELAS, pel:data.PELAJARAN})"  ng-style="{'background-color':($index % 2 === 0 ? 'white' :'#D8E2E9')}">
           <div class="col" style="border: solid 1px grey;">{{data.PELAJARAN}}</div>
           <div class="col" style="border: solid 1px grey;">{{data.KELAS}}</div>

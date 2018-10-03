@@ -44,12 +44,12 @@
         <div class="row header positive" style="background-color:lightgrey;"  ng-show="nilai.length > 1">
           <div class="col col-25" style="border: solid 1px grey;">Pelajaran</div>
 
-          <div class="col" style="border: solid 1px grey;">U1</div>
-          <div class="col" style="border: solid 1px grey;">U2</div>
-          <div class="col" style="border: solid 1px grey;">U3</div>
-          <div class="col" style="border: solid 1px grey;">UTS</div>
-          <div class="col" style="border: solid 1px grey;"> UAS</div>
-          <div class="col" style="border: solid 1px grey;">RAP</div>
+          <div class="col" style="border: solid 1px grey;">KD1</div>
+          <div class="col" style="border: solid 1px grey;">KD2</div>
+          <div class="col" style="border: solid 1px grey;">KD3</div>
+          <div class="col" style="border: solid 1px grey;">KD4</div>
+          <div class="col" style="border: solid 1px grey;">R KI3</div>
+          <div class="col" style="border: solid 1px grey;">R KI4</div>
         </div>
     <ion-scroll direction="xy" ng-show="nilai.length > 1" vs-repeat="{scrollParent: 'window', size: 20}">
          <div class="row" ng-repeat="data in nilai  | filter:searchFilter" style="border: solid 1px grey;" ng-style="{'background-color':($index % 2 === 0 ? 'white' :'#D8E2E9')}">
