@@ -1,0 +1,67 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-actionsheet": {
+            "PACKAGE_NAME": "com.sisfosekolah.mob"
+        },
+        "cordova-plugin-badge": {
+            "PACKAGE_NAME": "com.sisfosekolah.mob"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.sisfosekolah.mob"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.sisfosekolah.mob"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.sisfosekolah.mob"
+        },
+        "cordova-plugin-fcm": {
+            "PACKAGE_NAME": "com.sisfosekolah.mob"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.sisfosekolah.mob"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.sisfosekolah.mob"
+        },
+        "cordova-plugin-filepath": {
+            "PACKAGE_NAME": "com.sisfosekolah.mob"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.sisfosekolah.mob"
+        },
+        "cordova-plugin-sms": {
+            "PACKAGE_NAME": "com.sisfosekolah.mob"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.sisfosekolah.mob"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.sisfosekolah.mob"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.sisfosekolah.mob"
+        },
+        "cordova-sms-plugin": {
+            "PACKAGE_NAME": "com.sisfosekolah.mob"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.sisfosekolah.mob"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-app-event": {
+            "PACKAGE_NAME": "com.sisfosekolah.mob"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.sisfosekolah.mob"
+        }
+    }
+}

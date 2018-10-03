@@ -1,0 +1,176 @@
+<ion-view view-title=
+<ion-header-bar >
+
+   
+   <a id="header">
+       <img src="img/header.jpeg" width="100%">
+     
+    </a>
+</ion-header-bar> 
+<ion-nav-title> {{title}} </ion-nav-title>
+  <ion-content  class="has-header padding has-footer ">
+  <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col">
+   </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+
+
+
+
+
+  <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="lskelas()">
+          </ion-refresher>
+<div class="list">
+  <div class="item">
+    <p align="center"> Kirim Pesan</p>
+ </div>
+
+</div>
+  
+     
+
+     <div class="card-wrapper" style="margin-top: 1;">
+
+      
+         <div class="row header positive" style="background-color:lightgrey;">
+          <div class="col col-25" style="border: solid 1px grey;">ID Pesan</div>
+          <div class="col col-25" style="border: solid 1px grey;">Tgl</div>
+          <div class="col col-25" style="border: solid 1px grey;">Pesan</div>
+          <div class="col col-25" style="border: solid 1px grey;">Tujuan</div>
+          <!--<div class="col" style="border: solid 1px grey;"></div>-->
+         
+        </div>
+        <ion-scroll>
+       <div class="row"  ng-repeat="data in history | limitTo:15" ui-sref="admin.pesanadmin1({id:data.id})">
+          <div class="col col-25" style="border: solid 1px grey;">{{data.id }}</div>
+          <div class="col col-25" style="border: solid 1px grey;">{{data.JAM}}</div>
+          <div class="col col-25" style="border: solid 1px grey;">{{data.PESAN}}</div>
+          <div class="col col-25" style="border: solid 1px grey;">{{data.TUJUAN}}</div>
+        <!--<div class="col" style="border: solid 1px grey;"><button class="button button-icon ion-arrow-right-b"></button></div>-->
+        </div>
+      </ion-scroll>
+    </div>
+
+<form>
+       
+        <label class="item item-input">
+                    <span class="input-label">Tujuan:</span>
+                    <div class="item-input item-select item-input-wrapper">
+    <div class="input-label">
+   
+    <select type="text" ng-model="pesan.tujuan" ng-change="loadpenerima();">
+         <option  ng-selected="true" >Tujuan</option>
+         <option  ng-value="'SISWA'" >Siswa</option>
+          <option  ng-value="'WALI'" >Ortu</option>
+          <option  ng-value="'WALISIS'" >Ortu & Siswa</option>
+          <option  ng-value="'GURU'" >Guru</option>
+          <option  ng-value="'KARYAWAN'" >Karyawan</option>
+      
+        </select> 
+ </div>
+         
+      </div>
+      </label>
+      <label class="item item-input"  ng-show="pesan.tujuan == 'SISWA' || pesan.tujuan == 'WALI' || pesan.tujuan == 'WALISIS' ">
+                    <span class="input-label">Kelas:</span>
+                    <div class="item-input item-select item-input-wrapper">
+    <div class="input-label">
+   
+    <select type="text" ng-model="pesan.kelas" ng-change="loadkelas();">
+        <option ng-value="'SISWA'"> Semua</option>
+         <option  ng-repeat="data in lskelas" ng-value="data.KELAS">{{data.KELAS }}</option>
+      
+        </select> 
+ </div>
+         
+      </div>
+      </label>
+      
+      </ion-list>
+  
+<div class="card" >
+  <div class="item item-body">
+  
+  <div class="item item-input">
+    <textarea ng-model="pesan.isi" ng-init="pesan.isi='SMKN 1 SURABAYA'"> SMKN 1 SURABAYA
+    </textarea>
+   </div>
+  </div>
+    <div class="item">
+  <center><a class="button button-full button-positive" ng-click="kirim(); pesan.isi='SMKN 1 SURABAYA';pesan.tujuan=''" type="reset">
+  Kirim
+</a></center>
+  </div>
+</div>
+</form>
+
+    </ion-scroll>
+    <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+  
+  </ion-content>
+ <div class="bar bar-subfooter">
+        <div class="list">
+          <div class="button-bar bottom social-login" style="position: fixed; bottom: 1;">
+    <a class="button  button-positive icon-left ion-refresh" ng-click="lskelas2();">Refresh</a>
+  <a class="button  button-positive icon-left ion-home"  ng-href="#/admin/home">Home</a>
+</div>
+        </div>
+      </div>
+     <ion-footer-bar class="bar-stable" tap-scroll="false">
+  <div class = "row">
+   <div class = "col">    <marquee>
+ <span ng-repeat="item in berita">
+ <a href="#/app/brt/{{item.id_berita}}">
+          {{item.judul}}</a> |
+      </span> 
+  </marquee></div>
+
+</div>
+</ion-footer-bar>
+</ion-view>

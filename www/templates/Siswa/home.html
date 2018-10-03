@@ -1,0 +1,209 @@
+<ion-view view-title=
+<ion-header-bar >
+
+   
+   <a id="header">
+       <img src="img/header.jpeg" width="100%">
+     
+    </a>
+</ion-header-bar>  
+<ion-nav-title> {{title}} </ion-nav-title>
+  <ion-content  class="has-header has-subheader padding has-footer ">
+
+ <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div><div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div><div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+
+<div class="container">
+  <div class="row" style="margin-top: -50px !important;">
+    <div class="col col-33">
+       <div class="card" ng-click="nilai()">
+                 
+                 <div class="item item-image">
+    <img src="img/24.png" >
+    <p>Nilai</p>  
+    <div ng-repeat="nil in nila" ng-model="ni">  <span class="badge badge-assertive"  ng-hide="nil.nil == 0" style="position:absolute; top:1; right:0;">{{nil.nil}}</span></div>
+  </div>
+                </div>
+    </div>
+    <div class="col col-33">
+      <div class="card" ng-click="hadir()">
+                 
+                 <div class="item item-image">
+    <img src="img/17.png">
+    <p>Absensi</p>
+  </div>
+                </div>
+    </div>
+    <div class="col col-33">
+       <div class="card" ng-click="bk()">
+                
+                 <div class="item item-image">
+    <img src="img/13.png">
+    <p>BK/Pelanggaran</p>
+  </div>
+                </div >
+    </div>
+  </div>
+  <div class="row" style="margin-top: -40px !important;">
+   
+    <div class="col col-33">
+       <div class="card" ng-click="keuangan()">
+                 
+                 <div class="item item-image">
+    <img src="img/16.png">
+    <p>Keuangan</p>
+  </div>
+                </div>
+    </div>
+     <div class="col col-33" ui-sref="app.berita">
+       <div class="card" >
+                 
+                 <div class="item item-image">
+    <img src="img/PNG/32.png" >
+    <p>Berita</p>  
+   
+  </div>
+                </div>
+    </div>
+    <div class="col col-33">
+       <div class="card" ui-sref="app.user">
+                
+                 <div class="item item-image">
+    <img src="img/PNG/38.png">
+    <p>Chat</p>
+   
+  </div>
+                </div >
+    </div>
+  </div>
+  <div class="row" style="margin-top: -40px !important;">
+    <div class="col col-33">
+       <div class="card" ui-sref="app.sms">
+                 
+                 <div class="item item-image">
+    <img src="img/PNG/45.png" >
+    <p>SMS</p>  
+    
+  </div>
+                </div>
+    </div>
+    <div class="col col-33">
+       <div class="card" ui-sref="app.jadwal">
+                 
+                 <div class="item item-image">
+    <img src="img/PNG/47.png">
+    <p>Jadwal Pelajaran</p>
+  </div>
+                </div>
+    </div>
+    <div class="col col-33">
+       <div class="card" ui-sref="app.kalender">
+                
+                 <div class="item item-image">
+    <img src="img/PNG/39.png">
+    <p>Kalender Akademik</p>
+  </div>
+                </div >
+    </div>
+  </div>
+   <div class="row" style="margin-top: -40px !important;">
+    <div class="col col-33">
+       <div class="card"  onclick="window.open('https://line.me/R/ti/p/%40qqn3914g'); return false;">
+                 
+                 <div class="item item-image">
+    <img src="img/line2.png" >
+    <p>LINE</p>  
+    
+  </div>
+                </div>
+    </div>
+    <div class="col col-33">
+       <div class="card" onclick="window.open('https://www.facebook.com/Sia-Infoakademik-295571670959669/', '_system', 'location=yes'); return false;">
+                 
+                 <div class="item item-image">
+    <img src="img/fb.png" sizes="110%">
+    <p>FB</p>
+  </div>
+                </div>
+    </div>
+    <div class="col col-33">
+       <div class="card" onclick="window.open('https://twitter.com/SiaInfoakademik', '_system', 'location=yes'); return false;">
+  
+                 <div class="item item-image">
+    <img src="img/twitter.png">
+    <p>Twitter</p>
+  </div>
+                </div >
+    </div>
+  </div>
+
+</div>
+
+  
+ <!--div class="row" style="display: flex;">
+  <div class="col">
+<div class="card">
+  <div class="item item-image" ui-sref="app.sms">
+    <img src="img/PNG/32.png">
+  </div>
+</div>
+  </div>
+  <div class="col">
+  <a ng-href="#" href="#" onclick="window.open('https://www.facebook.com/pages/Smkn-1-Surabaya/1588427988094654?fref=ts', '_system', 'location=yes'); return false;">
+    <div class="card">
+  <div class="item item-image" >
+    <img src="img/Twitter.ico">
+  </div>
+</div></a>
+  </div>
+  
+  <div class="col" >
+    <a ng-href="#" onclick="window.open('https://twitter.com/drimamscom', '_system', 'location=yes'); return false;">
+    <div class="card">
+  <div class="item item-image"  >
+    <img src="img/Twitter.ico">
+  </div>
+</div>
+  </div>
+  </div></a>
+  </div-->
+  
+
+  </ion-content>
+     <ion-footer-bar class="bar-stable" tap-scroll="false">
+    <div class = "row">
+   <div class = "col-50"  ng-href="#/app/home/{{level}}/{{nis}}">
+  <center>HOME</center> 
+</div>
+<div class = "col-50" ui-sref="app.listpesan">
+ <center>PESAN</center>
+ <span class="badge badge-assertive"  ng-hide="pan == 0" style="position:absolute; top:0; right:0;">{{pan}}</span>
+</div>
+</div>
+</ion-footer-bar>
+</ion-view>

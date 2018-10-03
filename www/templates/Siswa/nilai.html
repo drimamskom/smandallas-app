@@ -1,0 +1,151 @@
+<ion-view view-title=
+<ion-header-bar >
+
+   
+   <a id="header">
+       <img src="img/header.jpeg" width="100%">
+     
+    </a>
+</ion-header-bar>  
+<ion-nav-title> {{title}} </ion-nav-title>
+  <ion-content  class="has-header padding has-footer " scroll="false">
+
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+
+
+<div class="item-input-inset " style="padding:0px !important;">
+    <label class="item-input-wrapper ">
+      <input  type="search" placeholder="Cari" ng-model="searchFilter">
+    </label>
+  </div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="card" ng-hide="nilai.length > 1 || !nilai">
+  <p class="item item-text-wrap">Maaf Saat Ini Data Belum Tersedia, Cek Jaringan Internet Atau Coba Beberapa Saat Lagi  </p>
+</div>
+
+        <div class="row header positive" style="background-color:lightgrey;"  ng-show="nilai.length > 1">
+          <div class="col col-25" style="border: solid 1px grey;">Pelajaran</div>
+
+          <div class="col" style="border: solid 1px grey;">U1</div>
+          <div class="col" style="border: solid 1px grey;">U2</div>
+          <div class="col" style="border: solid 1px grey;">U3</div>
+          <div class="col" style="border: solid 1px grey;">UTS</div>
+          <div class="col" style="border: solid 1px grey;"> UAS</div>
+          <div class="col" style="border: solid 1px grey;">RAP</div>
+        </div>
+    <ion-scroll direction="xy" ng-show="nilai.length > 1" vs-repeat="{scrollParent: 'window', size: 20}">
+         <div class="row" ng-repeat="data in nilai  | filter:searchFilter" style="border: solid 1px grey;" ng-style="{'background-color':($index % 2 === 0 ? 'white' :'#D8E2E9')}">
+          <div class="col col-25" >{{data.PELAJARAN }}</div>
+       
+          <div class="col" style="border: solid 1px grey;">{{data.KDK}}</div>
+          <div class="col" style="border: solid 1px grey;">{{data.KDP}}</div>
+          <div class="col" style="border: solid 1px grey;">{{data.KDA}}</div>
+          <div class="col" style="border: solid 1px grey;">{{data.UTSK}}</div>
+          <div class="col" style="border: solid 1px grey;">{{data.UASP}}</div>
+          <div class="col" style="border: solid 1px grey;border-right: 0px;">{{data.NRAPORTK}}</div>
+      </div>
+       
+    <div class="row" ng-repeat="data in nilai | filter:searchFilter" ng-show="data.status === '1'" ng-style="{'background-color':($index % 2 === 0 ? 'white' :'#D8E2E9')}"  >
+
+          <div class="col col-25" style="border: solid 1px red;"><b><center>
+            {{data.PELAJARAN }}</center> </b></div>
+       
+          <div class="col" style="border: solid 1px red;"><center>
+            {{data.KDK}}
+          </center> </div>
+          <div class="col" style="border: solid 1px red;"><center>
+            {{data.KDP}}
+          </center> </div>
+          <div class="col" style="border: solid 1px red;"><center>
+            {{data.KDA}}
+          </center> </div>
+          <div class="col" style="border: solid 1px red;"><center>
+            {{data.UTSK}}
+          </center> </div>
+          <div class="col" style="border: solid 1px red;"><center>
+            {{data.UASP}}
+          </center> </div>
+          <div class="col" style="border: solid 1px red;"><center>
+            {{data.NRAPORTK}}
+          </center> </div>
+      </div>
+     
+
+    </ion-scroll>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row" style="margin-top: 1000px;">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+  <div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div><div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+  </ion-content>
+ <div class="bar bar-subfooter">
+        <div class="list">
+          <div class="button-bar bottom social-login" style="position: fixed; bottom: 1;">
+    <a class="button  button-positive icon-left ion-refresh" ng-click="shownis()">Refresh</a>
+  <a class="button  button-positive icon-left ion-home"  ng-href="#/app/home/{{level}}/{{nis}}" ng-click="clear();">Home</a>
+</div>
+        </div>
+      </div>
+     <ion-footer-bar class="bar-stable" tap-scroll="false">
+  <div class = "row">
+   <div class = "col">    <marquee>
+ <span ng-repeat="item in berita">
+ <a href="#/app/brt/{{item.id_berita}}">
+          {{item.judul}}</a> |
+      </span> 
+  </marquee></div>
+
+</div>
+</ion-footer-bar>
+</ion-view>

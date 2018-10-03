@@ -1,0 +1,132 @@
+<ion-view view-title=
+<ion-header-bar >
+
+   
+   <a id="header">
+       <img src="img/header.jpeg" width="100%">
+     
+    </a>
+</ion-header-bar> 
+<ion-nav-title> {{title}} </ion-nav-title>
+  <ion-content  class="has-header padding has-footer ">
+  <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col">
+   </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+
+
+
+  <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="shownis()">
+          </ion-refresher>
+
+  
+
+ <ion-scroll direction="xy" id="map_content">
+        <div class="list" >
+<div>
+<div class="list card">
+  <div class="item">
+ 
+    <h2>Rekapitulasi Nilai</h2>
+  </div>
+
+  <div class="item item-image" ui-sref='admin.akademiknilai'>
+       <img src="img/rekap.png" style="width: 100%; height: 50%;">
+  </div>
+</div>
+
+<div class="list card">
+  <div class="item ">
+ 
+    <h2>Rekapitulasi Absensi</h2>
+  </div>
+
+  <div class="item item-image" ui-sref='admin.akademikabsensi'>
+       <img src="img/rekap.png" style="width: 100%; height: 50%;">
+  </div>
+  </div>
+   <div class="list card">
+  <div class="item ">
+
+    <h2>Rekapitulasi BK</h2>
+  </div>
+
+
+
+  <div class="item item-image" ui-sref='admin.akademikbk'>
+       <img src="img/rekap.png" style="width: 100%; height: 50%;">
+  </div>
+
+</div>
+</div>
+</ion-scroll>
+          
+    <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+  
+  </ion-content>
+ <div class="bar bar-subfooter">
+        <div class="list">
+          <div class="button-bar bottom social-login" style="position: fixed; bottom: 1;">
+       <a class="button  button-positive icon-left ion-refresh" ng-click="hadir()">Refresh</a>
+  <a class="button  button-positive icon-left ion-home"  ng-href="#/admin/home">Home</a>
+</div>
+        </div>
+      </div>
+     <ion-footer-bar class="bar-stable" tap-scroll="false">
+  <div class = "row">
+   <div class = "col">    <marquee>
+ <span ng-repeat="item in berita">
+ <a href="#/app/brt/{{item.id_berita}}">
+          {{item.judul}}</a> |
+      </span> 
+  </marquee></div>
+
+</div>
+</ion-footer-bar>
+</ion-view>

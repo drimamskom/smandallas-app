@@ -1,0 +1,79 @@
+<ion-view title="
+<ion-header-bar>
+<div class="list">
+    <a class="item item-thumbnail-left" href="#">
+      <img src="img/logo.png">
+      <h2>SMKN 1 SURABAYA</h2>
+      <p>www.smkn1surabaya.sch.id</p>
+             <p> Jl. SMEA No. 4, Wonokromo, Kota SBY,
+Jawa Timur 60243</p>
+    </a>
+</div> </ion-header-bar>" id="page2">
+    <ion-content padding="false" class="has-subheader has-footer">
+        <form class="list" name="myForm">
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">Daftar sebagai:</span>
+                    <ion-item class="item-input item-select item-right">
+    <div class="input-label">
+   
+    <select ng-model="reg.level" class="item-select item">
+
+
+        <option  ng-value="'SISWA'">Siswa</option>
+        <option ng-value="'WALI SISWA'" >Wali Siswa</option>
+        <option  ng-value="'GURU'" >Guru</option>
+        <option  ng-value="'BK'" >BK</option>
+          <option  ng-value="'ADMIN'" >Admin</option>
+        </select> 
+ </div>
+    </ion-item >
+                </label>
+                <label class="item item-input" ng-click="showPopup();">
+                    <span class="input-label">NIS:</span>
+                    <input type="text"  ng-model="reg.nis" init-from-form>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Nama</span>
+                    <input type="text" ng-model="reg.NAMA" init-from-form>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Alamat</span>
+                    <input type="text" ng-model="reg.ALAMAT" >
+                </label>
+                 <label class="item item-input">
+                    <span class="input-label">Handphone</span>
+                    <input type="text" ng-model="reg.no" >
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" ng-model="reg.pass" id="pw1" name="pw1" ng-required ng-init="reg.nis=data.nis">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Re-Password</span>
+                    <input type="password" ng-model="pw2" id="pw2" name="pw2" ng-required pw-check='pw1' ng-init="reg.nis=data.nis">
+                </label>
+              <div class='msg-block' ng-show='myForm.$error'>
+  <span class='msg-error' ng-show='myForm.pw2.$error.pwmatch'>
+    Passwords don't match.
+  </span>
+</div>
+            
+                 
+            </ion-list>
+
+            <a ui-sref="profile" id="register-button3" class="button button-stable  button-block icon-right ion-chevron-right" ng-click="simpan();" >Sign up</a>
+        </form>
+        <a ng-href="#/login" id="login-button2" class="button button-positive  button-block button-clear">Back to login</a>
+    </ion-content>
+     <ion-footer-bar class="bar-stable">
+
+  <marquee>
+ <span ng-repeat="item in berita">
+ <a href="#/berita/{{item.id_berita}}">
+          {{item.judul}}</a> |
+      </span> 
+  </marquee>
+
+</ion-footer-bar>
+</ion-view>

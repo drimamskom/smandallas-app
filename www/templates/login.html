@@ -1,0 +1,66 @@
+<ion-view view-title="
+<ion-header-bar >
+
+    <a class="item no-padding" id="header">
+       <img src="img/header.jpeg">
+     
+    </a>
+</ion-header-bar>"  >
+    <ion-content  class="has-subheader has-footer login" >
+    <div style=" opacity: 0.6 !important;">
+    <form>
+            <ion-list >
+                <label class="item item-input">
+                    <span class="input-label">NIS</span>
+                    <input type="text" placeholder="" ng-model="login.nis">
+                </label>
+                   <label class="item item-input">
+                    <span class="input-label">No.HP</span>
+                    <input type="text" placeholder="" ng-model="login.hp">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="" ng-model="login.password">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Masuk sebagai:</span>
+                    <ion-item class="item-input item-select item-right">
+    <div class="input-label">
+   
+    <select ng-model="login.level" class="item-select item">
+          <option  ng-value="'SISWA'">Siswa</option>
+        <option ng-value="'WALI SISWA'" >Wali Siswa</option>
+        <option  ng-value="'GURU'" >Guru</option>
+        <option  ng-value="'BK'" >BK</option>
+         <option  ng-value="'ADMIN'" >Admin</option>
+       
+        </select> 
+ </div>
+    </ion-item>
+                </label>
+                 <label class="item item-input">
+                    <span class="input-label"></span>
+                    <a>reset&nbsp;</a><br>
+                    <ion-checkbox >Auto Sign In</ion-checkbox>
+                </label>
+                
+            </ion-list>
+            <div class="spacer" style="height: 40px;"></div>
+            <a ng-click="loginc();" id="login-button1" class="button button-positive  button-block" >Log in</a>
+             <a href="#/register"" class="button button-assertive  button-block">Or create an account</a>
+          
+        </form>
+        </div>
+
+    </ion-content>
+     <ion-footer-bar class="bar-stable">
+
+  <marquee>
+ <span ng-repeat="item in berita">
+ <a href="#/berita/{{item.id_berita}}">
+          {{item.judul}}</a> |
+      </span> 
+  </marquee>
+
+</ion-footer-bar>
+</ion-view>

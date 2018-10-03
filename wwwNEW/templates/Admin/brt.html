@@ -1,0 +1,99 @@
+<ion-view view-title="
+<ion-header-bar>
+<div class="list">
+    <a class="item item-thumbnail-left" >
+      <img src="img/logo.png">
+      <h2>SMKN 1 SURABAYA</h2>
+      <p>www.smkn1surabaya.sch.id</p>
+             <p> Jl. SMEA No. 4, Wonokromo, Kota SBY,
+Jawa Timur 60243</p>
+    </a>
+</div> </ion-header-bar>"  >
+  <ion-content  class="has-header padding has-footer">
+ <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col">
+   </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+
+
+<ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="showDataId()">
+          </ion-refresher>
+
+<div class="item item-text-wrap"  ng-repeat="item in data">
+      <h2>{{item.judul}}</h2>
+            <div class="row">
+   <div class="col text-left">
+     <p><i class="ion-calendar"> {{item.tanggal}}</i></p> </div>
+   <div class="col text-right">
+       
+</div>
+</div>
+</div>
+
+    <div class="item item-body" ng-repeat="item in data">
+
+     <p align="justify"  ng-bind-html="item.isi_berita"></p>
+    </div>
+
+    <div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+  </ion-content>
+
+ <div class="bar bar-subfooter">
+        <div class="list">
+          <div class="button-bar bottom social-login" style="position: fixed; bottom: 1;">
+       <a class="button  button-positive icon-left ion-refresh" ng-click="berita()">Refresh</a>
+  <a class="button  button-positive icon-left ion-chevron-left"  ng-click="back()">Kembali</a>
+</div>
+        </div>
+      </div>
+      
+     <ion-footer-bar class="bar-stable" tap-scroll="false">
+  <div class = "row">
+   <div class = "col">  <marquee>
+ <span ng-repeat="item in berita">
+ <a href="#/app/brt/{{item.id_berita}}">
+          {{item.judul}}</a> |
+      </span> 
+  </marquee>
+
+</div>
+</ion-footer-bar>
+</ion-view>

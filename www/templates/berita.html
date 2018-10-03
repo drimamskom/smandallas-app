@@ -1,0 +1,59 @@
+<ion-view view-title="
+<ion-header-bar>
+
+   <a class="item no-padding" id="header">
+       <img src="img/header.jpeg">
+     
+    </a>
+</ion-header-bar>
+  <ion-nav-title> {{title}} </ion-nav-title>
+  <ion-content  class="has-header padding has-footer " >
+
+<div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div><div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div><div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+
+
+<a class="item item-thumbnail-left" ng-repeat="konten in berita" ng-href="#/app/brt/{{konten.id_berita}}">
+   <img ng-src="http://mob.sma-persatuan-tulangan.sch.id/foto_berita/{{konten.gambar}}" onerror="this.src='img/logo.png'">
+      <h2>{{konten.judul}}</h2>
+      <p>{{konten.tanggal}}</p>
+</a>
+<div>
+</div>
+</ion-content>
+ 
+ <div class="bar bar-footer">
+      
+        <div class="list">
+          <div class="button-bar bottom social-login" style="position: fixed; bottom: 1;">
+    <a class="button  button-positive icon-left ion-refresh" ng-click="loadberita()">Refresh</a>
+  <a class="button  button-positive icon-left ion-home"  ng-click="back()">Home</a>
+</div>
+        </div>
+     
+</div>
+        </div>
+      </div>
+</ion-view>

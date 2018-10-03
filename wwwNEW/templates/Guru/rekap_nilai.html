@@ -1,0 +1,160 @@
+<ion-view view-title="
+<ion-header-bar>
+<div class="list">
+    <a class="item item-thumbnail-left" >
+      <img src="img/logo.png">
+      <h2>SMKN 1 SURABAYA</h2>
+      <p>www.smkn1surabaya.sch.id</p>
+       <p> Jl. SMEA No. 4, Wonokromo, Kota SBY,
+Jawa Timur 60243</p>
+    </a>
+</div> </ion-header-bar>"  >
+  <ion-content  class="has-header padding has-footer ">
+  <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col">
+   </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+
+
+
+  <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="shownis()">
+          </ion-refresher>
+          <div class="list">
+   <div class="item">
+    <p align="center"> Rekapitulasi Nilai</p>
+ </div>
+
+</div>
+<div class="card">
+    <ion-list >
+                <label class="item item-input">
+                    <span class="input-label">Pelajaran:</span>
+                    <input type="text" ng-model="pel">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Kelas:</span>
+                    <input type="text"  ng-model="kel">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Nilai:</span>
+                    <ion-item class="item-input item-select item-input-wrapper">
+    <div class="input-label">
+   
+    <select ng-model="nilai" id="nilai" class="item-input item-select item-input-wrapper" ng-change="showrkp(nilai)">
+          <option  ng-selected="true">Nilai</option>
+          <option  ng-value="'KDK'" >U1</option>
+          <option  ng-value="'KDP'" >U2</option>
+          <option  ng-value="'KDA'" >U3</option>
+          <option  ng-value="'UTSK'" >UTS</option>
+          <option  ng-value="'UASP'" >UAS</option>
+          <option  ng-value="'NRAPORTK'" >RAPORT</option>
+        </select> 
+ </div>
+    </ion-item>
+    </label>
+
+            
+            </ion-list>
+  </div>
+    
+</div>
+<div class="card" >
+   <div >
+      <label class="item item-input" >
+                    <span class="input-label">Nilai Tertinggi:</span>
+                    <input type="text"  ng-value="max" ng-disabled="true">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Nilai Terendah:</span>
+                    <input type="text" ng-value="min" ng-disabled="true">
+                </label>
+                  <label class="item item-input">
+                    <span class="input-label">Rata-rata :</span>
+                    <input type="tel"  maxlength="3" ng-value="av" ng-disabled="true">
+                </label>
+   </div>
+<div>
+<canvas  id="bar" class="chart chart-bar" chart-data="data" chart-labels="label">
+</canvas>
+</div>
+</div>
+          <ion-scroll direction="xy" id="map_content">
+        <div class="row" ng-repeat="data in hadir| filter:searchFilter">
+          <div class="col col-20" isDate="true" style="border: solid 1px grey;">{{data.xtanggal|amDateFormat:'DD/MM/YYYY'}}</div>
+          
+          <div class="col" style="border: solid 1px grey;">{{data.fttimey}}</div>
+          <div class="col" style="border: solid 1px grey;">{{data.fttimex}}</div>
+          <div class="col" style="border: solid 1px grey;">{{data.keterangan}}</div>
+          </div>
+
+
+    </ion-scroll>
+    <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+  
+  </ion-content>
+ <div class="bar bar-subfooter">
+        <div class="list">
+          <div class="button-bar bottom social-login" style="position: fixed; bottom: 1;">
+       <a class="button  button-positive icon-left ion-refresh" ng-click="hadir()">Refresh</a>
+  <a class="button  button-positive icon-left ion-home"  ng-href="#/guru/home/{{level}}/{{nis}}">Home</a>
+</div>
+        </div>
+      </div>
+     <ion-footer-bar class="bar-stable" tap-scroll="false">
+  <div class = "row">
+   <div class = "col">    <marquee>
+ <span ng-repeat="item in berita">
+ <a href="#/app/brt/{{item.id_berita}}">
+          {{item.judul}}</a> |
+      </span> 
+  </marquee></div>
+
+</div>
+</ion-footer-bar>
+</ion-view>

@@ -1,0 +1,138 @@
+<ion-view view-title=
+<ion-header-bar >
+
+   
+   <a id="header">
+       <img src="img/header.jpeg" width="100%">
+     
+    </a>
+</ion-header-bar>  
+<ion-nav-title> {{title}} </ion-nav-title>
+  <ion-content  class="has-header padding has-footer ">
+   <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<ion-list>
+            
+			<ion-item class="item-divider">Update Profile</ion-item>
+       <div>
+       <center>
+               <img class="profile-picture big-profile-picture" src="http://mob.sma-persatuan-tulangan.sch.id/API-glob/profile/{{nis}}.jpg" onerror="this.src='img/user.jpg'">  
+       </center>
+       </div>
+ 
+			            <ion-item   ng-repeat="me in user">
+    <p>
+        <font size="2" color="gray" >Nama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;: {{me.NAMA}}</font>
+    <br>
+        <font size="2" color="gray" >Alamat  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;: {{me.ALAMAT}}</font>
+    <br>
+        <font size="2" color="gray" >No HP  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; : {{me.hpsiswa}}</font>
+    <br>
+        <font size="2" color="gray" >Keterangan : {{me.KETERANGAN}}</font>
+    </p>
+    <button class="button button-balanced button-block" ng-click="editModal()">Edit Profile</button>
+</ion-item>
+
+            </ion-list>
+
+            <script id="edit.html" type="text/ng-template">
+        <div class="modal">
+            <ion-header-bar class="bar-stable">
+                <button class="button button-icon icon ion-close-circled" ng-click="batal()"></button>
+                <h1 class="title"> Edit Profile</h1>
+            </ion-header-bar>
+            <ion-content>
+              <ion-item class="profile-item" ng-click="showCameraLib()">
+                         <div ng-show="!ubah">
+       <center>
+               <img class="profile-picture big-profile-picture" src="http://mob.sma-persatuan-tulangan.sch.id/API/profile/{{PHOTO}}" onerror="this.src='img/user.jpg'">  
+       </center>
+       </div>
+                         <div ng-show="ubah">
+                            <img class="profile-picture big-profile-picture"  ng-src="{{pathForImage(image)}}">
+                        </div>
+                    </ion-item>
+                <form>
+                    <div class="list" ng-repeat="me in user">
+                        <label class="item item-input">
+                        <span class="input-label"></span>
+                            <input type="hidden" placeholder="{{nis}}" ng-model="nis" value="{{nis}}" init-from-form>
+                            <p></p>
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">Nama :</span>
+                            <input type="text" placeholder="{{me.NAMA}}" ng-model="nama" ng-init="nama=me.NAMA" init-from-form>
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">Alamat :</span>
+                            <input type="text" placeholder="{{me.ALAMAT}}" ng-model="alamat" ng-init="alamat=me.ALAMAT" init-from-form>
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">No HP :</span>
+                            <input type="text" placeholder="{{me.hpsiswa}}" ng-model="no" ng-init="no=me.hpsiswa" init-from-form>
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">Keterangan :</span>
+                            <input type="text" placeholder="{{me.KETERANGAN}}" ng-model="keterangan" ng-init="keterangan=me.KETERANGAN" init-from-form>
+                        </label>
+                          <button class="button button-positive button-block" ng-click="simpan(nis,nama,alamat,no,keterangan);">
+                            Simpan 
+                        </button>
+                    </div>
+                </form>
+                </ion-content>
+                </div>
+                </script>
+
+   <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+  
+  </ion-content>
+ <div class="bar bar-subfooter">
+        <div class="list">
+          <div class="button-bar bottom social-login" style="position: fixed; bottom: 1;">
+       <a class="button  button-positive icon-left ion-refresh" ng-click="loaduser();">Refresh</a>
+  <a class="button  button-positive icon-left ion-home"  ng-href="#/app/home/{{level}}/{{nis}}">Home</a>
+</div>
+        </div>
+      </div>
+     <ion-footer-bar class="bar-stable" tap-scroll="false">
+  <div class = "row">
+   <div class = "col">    <marquee>
+ <span ng-repeat="item in berita">
+ <a href="#/app/brt/{{item.nis_berita}}">
+          {{item.judul}}</a> |
+      </span> 
+  </marquee></div>
+
+</div>
+</ion-footer-bar>
+</ion-view>

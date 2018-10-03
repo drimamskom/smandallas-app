@@ -1,0 +1,115 @@
+<ion-view view-title="
+<ion-header-bar >
+
+   <a class="item no-padding" id="header">
+       <img src="img/header.jpeg">
+     
+    </a>
+</ion-header-bar>"  >
+<ion-nav-title> {{title}} </ion-nav-title>
+  <ion-content  class="has-header padding has-footer ">
+ <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col">
+   </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+
+  <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="shownis()">
+          </ion-refresher>
+          <div class="item">
+    <p align="center"> Detail Pesan</p>
+ </div>
+  
+
+       <div class="card">
+    <ion-list ng-repeat="data in history | filter: {'id': pesid }">
+                <label class="item item-input" >
+                    <span class="input-label">Tujuan   :</span>
+                    <input type="text"  ng-value="data.TUJUAN">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Tanggal  :</span>
+                    <input type="text"  ng-value="data.JAM">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Pesan :</span>
+                  
+                </label>
+                <div class="item item-text-wrap">
+                     {{data.PESAN}}
+                     
+                   </div>
+                
+            </ion-list>
+  </div>
+
+
+    </ion-scroll>
+    <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+  
+  </ion-content>
+ <div class="bar bar-subfooter">
+        <div class="list">
+          <div class="button-bar bottom social-login" style="position: fixed; bottom: 1;">
+       <a class="button  button-positive icon-left ion-refresh" ng-click="lskelas()">Refresh</a>
+  <a class="button  button-positive icon-left ion-home"  ng-href="#/admin/home">Home</a>
+</div>
+        </div>
+      </div>
+     <ion-footer-bar class="bar-stable" tap-scroll="false">
+  <div class = "row">
+   <div class = "col">   <marquee>
+ <span ng-repeat="item in berita">
+ <a href="#/app/brt/{{item.id_berita}}">
+          {{item.judul}}</a> |
+      </span> 
+  </marquee></div>
+
+</div>
+</ion-footer-bar>
+</ion-view>

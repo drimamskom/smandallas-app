@@ -1,0 +1,47 @@
+<ion-side-menus enable-menu-with-back-views="true" >
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-subheader bar-stable"  title="tes">
+          <ion-nav-button>
+      </ion-nav-button>
+
+      <ion-nav-buttons side="left" cache-view="false">
+
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+        
+      </ion-nav-buttons>
+
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+   
+  </ion-side-menu-content >
+
+  <ion-side-menu side="left" >
+  
+    <ion-content class="no-padding" style=' top: 0px !important;'>
+      <ion-list>
+       <ion-list>
+       <ion-item class="item item-avatar " nav-clear menu-close  href="#/guru/profile">
+            <img class="profile-picture" src="http://mob.sma-persatuan-tulangan.sch.id/API/profile/{{nis}}.jpg" onerror="this.src='img/user.jpg'" spinner-on-load >    
+            <br>    
+          <h3 style="">{{user.NIG}}-{{user.NAMA}}</h3>
+         
+        </ion-item>
+
+             <ion-item menu-close ui-sref="guru.home">
+          <i class="icon ion-home"></i> HOME
+        </ion-item>
+      <ion-item menu-close ng-href="#/guru/user">
+          <i class="icon ion-person-stalker"></i> Pengguna lain
+        </ion-item>
+       <ion-item menu-close ui-sref="guru.profile">
+          <i class="icon ion-gear-b"></i> konfigurasi
+        </ion-item>
+        
+        <ion-item menu-close ng-click="logout()">
+         <i class="icon ion-log-out"></i> Logout
+        </ion-item>
+       
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

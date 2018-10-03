@@ -1,0 +1,114 @@
+<ion-view view-title="
+<ion-header-bar>
+<div class="list">
+    <a class="item item-thumbnail-left">
+      <img src="img/logo.png">
+      <h2>SMKN 1 SURABAYA</h2>
+      <p>www.smkn1surabaya.sch.id</p>
+             <p> Jl. SMEA No. 4, Wonokromo, Kota SBY,
+Jawa Timur 60243</p>
+    </a>
+</div> </ion-header-bar>"  >
+  <ion-content  class="has-header padding has-footer ">
+  <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col">
+   </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+
+
+
+  <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="listSMS()">
+          </ion-refresher>
+          <div class="list">
+  <div class="item item-input-inset">
+    <label class="item-input-wrapper">
+      <input type="search" placeholder="Cari" ng-model="searchFilter">
+    </label>
+
+  </div>
+
+</div>
+
+          <ion-scroll direction="xy" id="map_content">
+            <div class="list" ng-repeat="data in sms">
+
+                <a class="item item-avatar" href="#">
+                  <img src="img/logo.png">
+                  <h2>{{data.address}}</h2>
+                  <p>{{data.tgl_sms}}<br/>{{data.body}}</p>
+                </a>
+
+            </div>
+
+
+
+    </ion-scroll>
+    <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+  
+  </ion-content>
+ <div class="bar bar-subfooter">
+        <div class="list">
+          <div class="button-bar bottom social-login" style="position: fixed; bottom: 1;">
+       <a class="button  button-positive icon-left ion-refresh" ng-click="listSMS()">Refresh</a>
+  <a class="button  button-positive icon-left ion-home"  ng-href="#/app/home/{{level}}/{{nis}}">Home</a>
+</div>
+        </div>
+      </div>
+     <ion-footer-bar class="bar-stable" tap-scroll="false">
+  <div class = "row">
+   <div class = "col">    <marquee>
+ <span ng-repeat="item in berita">
+ <a href="#/app/brt/{{item.id_berita}}">
+          {{item.judul}}</a> |
+      </span> 
+  </marquee></div>
+
+</div>
+</ion-footer-bar>
+</ion-view>

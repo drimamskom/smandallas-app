@@ -1,0 +1,55 @@
+<ion-view view-title=
+<ion-header-bar >
+
+   
+   <a id="header">
+       <img src="img/header.jpeg" width="100%">
+     
+    </a>
+</ion-header-bar> 
+<ion-nav-title> {{title}} </ion-nav-title>
+   <ion-content  class="has-header has-footer" ng-repeat="item in data">
+<ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="showDataId()">
+          </ion-refresher>
+
+<div class="item item-text-wrap">
+      <h2>{{item.judul}}</h2>
+            <div class="row">
+   <div class="col text-left">
+     <p><i class="ion-calendar"> {{item.tanggal}}</i></p> </div>
+   <div class="col text-right">
+       
+</div>
+</div>
+    <div class="item item-body" ng-repeat="item in data">
+
+     <p align="justify"  ng-bind-html="item.isi_berita">{{item.isi_berita}}</p>
+    </div>
+<div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+  
+</ion-content>
+ <div class="bar bar-footer">
+        <div class="list">
+          <div class="button-bar bottom social-login" style="position: fixed; bottom: 1;">
+  <a class="button  button-positive icon-left ion-chevron-left"  ng-href="#/login">Kembali</a>
+</div>
+        </div>
+      </div>
+</ion-view>

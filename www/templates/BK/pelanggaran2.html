@@ -1,0 +1,211 @@
+<ion-view view-title="
+<ion-header-bar >
+
+    <a class="item no-padding" >
+       <img src="img/header.jpeg" width="100%" height="17%" >
+     
+    </a>
+</ion-header-bar>"  >
+<ion-nav-title> {{title}} </ion-nav-title>
+    <ion-content class="has-header padding has-footer ">
+        <div class="row">
+            <div class="col col-50"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col col-75"></div>
+        </div>
+        <div class="row">
+            <div class="col"> </div>
+            <div class="col col-75"></div>
+        </div>
+        <div class="row">
+            <div class="col"> </div>
+            <div class="col col-75"></div>
+        </div>
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col col-75"></div>
+        </div>
+        <div class="row">
+            <div class="col"> </div>
+            <div class="col col-75"></div>
+        </div>
+        <div class="row">
+            <div class="col"> </div>
+            <div class="col col-75"></div>
+        </div>
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="shownis()">
+        </ion-refresher>
+        <form ng-repeat="data in pel " ng-show="in='1'" >
+        <div class="card" >
+
+            <ion-list>
+                <label class="item item-input" ng-click="showPopupn();" >
+                    <span class="input-label">NIS:</span>
+                    <input type="text" ng-model="d.nis" ng-init="d.nis=data.NIS">
+                   
+                </label>
+                <label class="item item-input"  ng-if="in == 2">
+                    <span class="input-label">NIS:</span>
+                    <input type="text" ng-model="d.nis" ng-init="d.nis=data.NIK">
+                   
+                </label>
+                
+                <label class="item item-input">
+                    <span class="input-label">Nama:</span>
+                    <input type="text" ng-model="d.nama" ng-init="d.nama=data.NAMA">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Kelas:</span>
+                    <input type="text"  ng-model="d.kel" ng-init="d.kel=data.KELAS" init-from-form>
+                </label>
+                 <label class="item item-input" ng-click="showPopup();">
+                    <span class="input-label">Kode:</span>
+                    <input type="text"  ng-model="d.plg.KODE" ng-init="d.plg.KODE=data.KODE" init-from-form>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Jenis:</span>
+                    <input type="text"  ng-model="d.plg.JENIS" ng-init="d.plg.JENIS=data.JENIS" init-from-form>
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Skor:</span>
+                    <input type="text" ng-model="d.plg.SKOR"  ng-init="d.plg.SKOR=data.SKOR" init-from-form>
+                </label>
+            </ion-list>
+        </div>
+        <div class="card">
+            <div class="item item-body">
+                <div class="item item-input item-stacked-label">
+                    <span class="input-label">Nama Pelanggaran:</span>
+                    <textarea ng-model="d.plg.NAMAPLG"  ng-init="d.plg.NAMAPLG=data.NAMAPLG" init-from-form></textarea>
+                </div>
+            </div>
+            <input type="hidden" ng-model="d.smt" ng-init="d.smt=data.SMT" init-from-form>
+            <div class="item">
+                <center><button class="button button-full button-positive" type="reset" ng-click="entry();">
+  SIMPAN
+</button></center>
+            </div>
+        </div >
+        <div ng-repeat="p in lspel| filter:{KODE:res}">
+               <label class="item item-input">
+
+                    <input type="hidden"  ng-model="d.plg.JENIS" ng-init="d.plg.JENIS=p.JENIS" init-from-form>
+                </label>
+
+                <label class="item item-input">
+          
+                    <input type="hidden" ng-model="d.plg.SKOR"  ng-init="d.plg.SKOR=p.SKOR" init-from-form>
+                </label>
+                  <label class="item item-input">
+        
+                    <input type="hidden" ng-model="d.plg.NAMAPLG"  ng-init="d.plg.NAMAPLG=p.NAMAPLG" init-from-form>
+                </label>
+        </div>
+
+
+        </form >
+         <form >
+        <div class="card" ng-show="!d.nis" >
+            <ion-list >
+                <label class="item item-input" ng-click="showPopupn();" >
+                    <span class="input-label">NIS:</span>
+                    <input type="text" ng-model="d.nis" ng-init="d.nis=data.NIK" init-from-form ng-show="d.nis">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Nama:</span>
+                    <input type="text" ng-model="d.nama" ng-init="d.nama=data.NAMA" init-from-form>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Kelas:</span>
+                    <input type="text"  ng-model="d.kel" ng-init="d.kel=data.KELAS" init-from-form>
+                </label>
+                 <label class="item item-input" ng-click="showPopup();">
+                    <span class="input-label">Kode:</span>
+                    <input type="text"  ng-model="d.plg.KODE" ng-init="d.plg.KODE=data.KODE" init-from-form>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Jenis:</span>
+                    <input type="text"  ng-model="d.plg.JENIS" ng-init="d.plg.JENIS=data.JENIS" init-from-form>
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Skor:</span>
+                    <input type="text" ng-model="d.plg.SKOR"  ng-init="d.plg.SKOR=data.SKOR" init-from-form>
+                </label>
+            </ion-list>
+        </div>
+        <div class="card" ng-show="!d.nis">
+            <div class="item item-body">
+                <div class="item item-input item-stacked-label">
+                    <span class="input-label">Nama Pelanggaran:</span>
+                    <textarea ng-model="d.plg.NAMAPLG"  ng-init="d.plg.NAMAPLG=data.NAMAPLG" init-from-form></textarea>
+                </div>
+            </div>
+            <input type="hidden" ng-model="d.smt" ng-init="d.smt=data.SMT" init-from-form>
+            <div class="item">
+                <center><a class="button button-full button-positive" type="reset" ng-click="entry();">
+  SIMPAN
+</a></center>
+            </div>
+        </div >
+        <div ng-repeat="p in lspel| filter:{KODE:res}">
+               <label class="item item-input">
+
+                    <input type="hidden"  ng-model="d.plg.JENIS" ng-init="d.plg.JENIS=p.JENIS" init-from-form>
+                </label>
+
+                <label class="item item-input">
+          
+                    <input type="hidden" ng-model="d.plg.SKOR"  ng-init="d.plg.SKOR=p.SKOR" init-from-form>
+                </label>
+                  <label class="item item-input">
+        
+                    <input type="hidden" ng-model="d.plg.NAMAPLG"  ng-init="d.plg.NAMAPLG=p.NAMAPLG" init-from-form>
+                </label>
+        </div>
+
+
+        </form>
+        </ion-scroll>
+        <div class="row">
+            <div class="col col-50"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col col-75"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col col-75"></div>
+        </div>
+    </ion-content>
+    <div class="bar bar-subfooter">
+        <div class="list">
+            <div class="button-bar bottom social-login" style="position: fixed; bottom: 1;">
+                <a class="button  button-positive icon-left ion-refresh" ng-click="lskelas()">Refresh</a>
+                <a class="button  button-positive icon-left ion-home" ng-href="#/BK/home/{{level}}/{{nis}}">Home</a>
+            </div>
+        </div>
+    </div>
+    <ion-footer-bar class="bar-stable" tap-scroll="false">
+        <div class="row">
+            <div class="col">
+                <marquee>
+                    <span ng-repeat="item in berita">
+ <a href="#/app/brt/{{item.id_berita}}">
+          {{item.judul}}</a> |
+      </span>
+                </marquee>
+            </div>
+        </div>
+    </ion-footer-bar>
+</ion-view>

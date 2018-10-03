@@ -1,0 +1,185 @@
+<ion-view view-title="
+<ion-header-bar>
+<div class="list">
+    <a class="item item-thumbnail-left">
+      <img src="img/logo.png">
+      <h2>SMKN 1 SURABAYA</h2>
+      <p>www.smkn1surabaya.sch.id</p>
+      <p> Jl. SMEA No. 4, Wonokromo, Kota SBY,
+Jawa Timur 60243</p>
+    </a>
+</div> </ion-header-bar>"  >
+  <ion-content  class="has-header padding has-footer ">
+ <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div><div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div><div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<!--<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<!--<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div><div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+ <!--
+<div class="row" style="flex-wrap: wrap;  padding-top: 0px">
+      <div class="col col-50" ng-repeat="tes in homenu" style="padding: 0px">
+        <div class="list card" >
+        <div class="item item-divider">{{tes.judul}}</div>
+          <div class="item item-image">
+    <img src="{{tes.icon}}">
+  </div>
+</div>
+
+      </div>
+    </div> -->
+ <!-- <ion-list show-Delete = "data.showDelete" show-Reorder = "data.showReorder">
+            <ion-item ng-repeat="n in nis" type="item-text-wrap" >
+
+                <h2>{{nis.nis}}
+                   
+                </h2>
+            </ion-item>
+        </ion-list> -->
+
+    <div class="container">
+            <div class="cell-row cell-row-1">
+              <div class="cell-1">
+                <div ng-click="nilai()">
+                 
+                 <div class="item item-image">
+    <img src="img/penilaian.ico">
+    <p>Nilai</p>  
+    <div ng-repeat="nil in nila" ng-model="ni">  <span class="badge badge-assertive"  ng-hide="nil.nil == 0"style="position:absolute; top:1; right:0;">{{nil.nil}}</span></div>
+  </div>
+                </div>
+              </div>
+              <div class="cell-2">
+                <div ng-click="keuangan()">
+                  <div></div>
+                 <div class="item item-image">
+    <img src="img/keuangan.ico">
+    <p>Keuangan</p>
+  </div>
+                </div>
+
+              </div>
+              
+            </div >
+            <div class="cell-row cell-row-2">
+              <div class="cell-3">
+              
+                <div ng-click="bk()">
+                
+                 <div class="item item-image">
+    <img src="img/BK.ico">
+    <p>BK</p>
+  </div>
+                </div >
+                
+              </div >
+              <div class="cell-4">
+               <div ng-click="hadir()">
+                 
+                 <div class="item item-image">
+    <img src="img/absensi.ico">
+    <p>Kehadiran</p>
+  </div>
+                </div>
+              </div>
+              </div>
+ <div class="row" style="display: flex;">
+  <div class="col">
+<div class="card">
+  <div class="item item-image" ui-sref="app.sms">
+    <img src="img/sms.ico">
+  </div>
+</div>
+  </div>
+  <div class="col">
+  <a ng-href="#" href="#" onclick="window.open('https://www.facebook.com/pages/Smkn-1-Surabaya/1588427988094654?fref=ts', '_system', 'location=yes'); return false;">
+    <div class="card">
+  <div class="item item-image" >
+    <img src="img/fb.ico">
+  </div>
+</div></a>
+  </div>
+  
+  <div class="col" >
+    <a ng-href="#" onclick="window.open('https://twitter.com/drimamscom', '_system', 'location=yes'); return false;">
+    <div class="card">
+  <div class="item item-image"  >
+    <img src="img/Twitter.ico">
+  </div>
+</div>
+  </div>
+  </div></a>
+  </div>
+   <div class="card-wrapper" style="margin-top: 1;">
+<div class="item item-icon-right item-divider">Inbox Pesan <i class="icon ion-ios-loop-strong" ng-click="pesanc();"></i></div>
+    <div class="card custom-card">
+      <ion-scroll>
+        <ion-list>      
+          <ion-item  ng-repeat="p in pesan" ng-show="{{p.status === '0'}}" ui-sref="app.pesan({id: p.IDpesan})">
+           <b>{{p.PESAN}} </b>
+          </ion-item>
+           <ion-item  ng-repeat="p in pesan" ng-show="{{p.status != '0'}}" ui-sref="app.pesan({id: p.IDpesan})">
+           {{p.PESAN}} 
+          </ion-item>
+
+          
+        </ion-list>
+      </ion-scroll>
+    </div>
+  </div>
+
+
+  
+
+
+             
+
+
+
+
+  </ion-content>
+     <ion-footer-bar class="bar-stable" tap-scroll="false">
+  <div class = "row">
+   <div class = "col">
+    <marquee>
+ <span ng-repeat="item in berita">
+ <a href="#/app/brt/{{item.id_berita}}">
+          {{item.judul}}</a> |
+      </span> 
+  </marquee>
+
+</div>
+</ion-footer-bar>
+</ion-view>

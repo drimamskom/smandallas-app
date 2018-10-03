@@ -1,0 +1,124 @@
+<ion-view view-title="
+<ion-header-bar>
+<div class="list">
+    <a class="item item-thumbnail-left">
+      <img src="img/logo.png">
+      <h2>SMKN 1 SURABAYA</h2>
+      <p>www.smkn1surabaya.sch.id</p>
+       <p> Jl. SMEA No. 4, Wonokromo, Kota SBY,
+Jawa Timur 60243</p>
+    </a>
+</div> </ion-header-bar>"  >
+  <ion-content  class="has-header padding has-footer ">
+  <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col">
+   </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+
+
+
+
+
+  <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="lskelas();">
+          </ion-refresher>
+<div class="list">
+  <div class="item">
+    <p align="center"> {{pelajaran}} {{kelas}}</p>
+ </div>
+
+</div>
+        <div class="row header positive" style="background-color:lightgrey;">
+          <div class="col col-20" style="border: solid 1px grey;">NIS</div>
+          <div class="col col-25" style="border: solid 1px grey;">Nama</div>
+          <div class="col" style="border: solid 1px grey;">U1</div>
+          <div class="col" style="border: solid 1px grey;">U2</div>
+          <div class="col" style="border: solid 1px grey;">U3</div>
+          <div class="col" style="border: solid 1px grey;">UTS</div>
+          <div class="col" style="border: solid 1px grey;">UAS</div>
+          <div class="col" style="border: solid 1px grey;">RAP</div>
+        </div>
+    <ion-scroll direction="xy" id="map_content">
+        <div class="row" ng-repeat="data in lskelas" ui-sref="guru.entry({nis:data.NIS})">
+          <div class="col col-20" style="border: solid 1px grey;">{{data.NIS}}</div>
+          <div class="col col-25" style="border: solid 1px grey;">{{data.NAMA}}</div>
+          <div class="col col-10" style="border: solid 1px grey;">{{data.KDK}}</div>
+          <div class="col" style="border: solid 1px grey;">{{data.KDP}}</div>
+          <div class="col" style="border: solid 1px grey;">{{data.KDA}}</div>
+          <div class="col" style="border: solid 1px grey;">{{data.UTSK}}</div>
+          <div class="col" style="border: solid 1px grey;">{{data.UASP}}</div>
+          <div class="col" style="border: solid 1px grey;">{{data.NRAPORTK}}</div>
+        <!--<div class="col" style="border: solid 1px grey;"><button class="button button-icon ion-arrow-right-b"></button></div>-->
+        </div>
+         
+      </div>
+
+    </ion-scroll>
+    <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+  
+  </ion-content>
+ <div class="bar bar-subfooter">
+        <div class="list">
+          <div class="button-bar bottom social-login" style="position: fixed; bottom: 1;">
+    <a class="button  button-positive icon-left ion-refresh" ng-click="lskelas2();">Refresh</a>
+  <a class="button  button-positive icon-left ion-home"  ng-href="#/guru/home/{{level}}/{{nis}}">Home</a>
+</div>
+        </div>
+      </div>
+     <ion-footer-bar class="bar-stable" tap-scroll="false">
+  <div class = "row">
+   <div class = "col">    <marquee>
+ <span ng-repeat="item in berita">
+ <a href="#/app/brt/{{item.id_berita}}">
+          {{item.judul}}</a> |
+      </span> 
+  </marquee></div>
+
+</div>
+</ion-footer-bar>
+</ion-view>

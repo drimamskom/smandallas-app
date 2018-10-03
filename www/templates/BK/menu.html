@@ -1,0 +1,49 @@
+<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-subheader bar-stable"  title="tes">
+          <ion-nav-button>
+      </ion-nav-button>
+    <ion-nav-title>
+      <h1 class="title"><center> SISTEM INFORMASI AKADEMIK </center></h1>
+    </ion-nav-title>
+
+      <ion-nav-buttons side="left">
+
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+         <h1 class="title"><center> SISTEM INFORMASI AKADEMIK </center></h1>
+      </ion-nav-buttons>
+
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+
+    <ion-content>
+      <ion-list>
+        <ion-item class="item item-avatar " nav-clear menu-close  href="#/app/profile">
+            <img class="profile-picture" src="http://mob.sma-persatuan-tulangan.sch.id/API/profile/{{nis}}.jpg" onerror="this.src='img/user.jpg'" spinner-on-load >    
+            <br>    
+          <h3 style="">{{user.NIG}}-{{user.NAMA}}</h3>
+         
+        </ion-item>
+
+       <ion-item menu-close ui-sref="bk.home">
+          <i class="icon ion-home"></i> BK
+        </ion-item>
+      <ion-item menu-close  ui-sref="bk.user">
+          <i class="icon ion-person-stalker"></i> Pengguna lain
+        </ion-item>
+       <ion-item menu-close ui-sref="bk.profile">
+          <i class="icon ion-gear-b"></i> konfigurasi
+        </ion-item>
+        
+        <ion-item menu-close ng-click="logout()">
+         <i class="icon ion-log-out"></i> Logout
+        </ion-item>
+       
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

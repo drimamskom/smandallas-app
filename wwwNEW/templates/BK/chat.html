@@ -1,0 +1,135 @@
+<ion-view view-title="
+<ion-header-bar>
+<div class="list">
+    <a class="item item-thumbnail-left" >
+      <img src="img/logo.png">
+      <h2>SMKN 1 SURABAYA</h2>
+      <p>www.smkn1surabaya.sch.id</p>
+             <p> Jl. SMEA No. 4, Wonokromo, Kota SBY,
+Jawa Timur 60243</p>
+    </a>
+</div> </ion-header-bar>"  >
+  <ion-content  class="has-header padding has-footer ">
+  <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col">
+   </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+
+
+
+  <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="shownis()">
+          </ion-refresher>
+ 
+
+          <ion-scroll scroll="true">
+           <div  class="message-wrapper"
+                   ng-repeat="chat in dataChat">
+      
+                  <div ng-if="chat.status == 'send'">
+                      
+                    
+                      <div class="chat-bubble left">
+      
+                          <div class="message" ng-bind-html="chat.konten" autolinker>
+                          </div>
+      
+                       
+                      </div>
+                  </div>
+      
+                  <div ng-if="chat.status == 'received' ">
+                    
+                      <div class="chat-bubble right">
+      
+                          <div class="message" ng-bind-html="chat.konten" autolinker>
+                          </div>
+      
+                          
+                      </div>
+                    
+                  </div>
+      
+                  <div class="cf"></div>
+      
+              </div>
+
+</ion-scroll> 
+
+</ion-list>
+    <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+
+  </ion-content>
+
+ 
+ <div class="bar bar-subfooter" style=" overflow: visible !important;">
+
+<div class="item item-input item-input-inset item-input-wrapper">
+     <label class="item-input-wrapper">
+      <input type="text" ng-model="isiChat" required minlength="1" maxlength="1500" >
+                  </label>
+      
+                    <button class="button" ng-click="kirim(isiChat); isiChat = ''" type="reset" >Kirim
+                    </button>
+                  
+
+        </div>
+
+      </div>
+     <ion-footer-bar class="bar-stable" tap-scroll="false">
+  <div class = "row">
+   <div class = "col">    <marquee>
+ <span ng-repeat="item in berita">
+ <a href="#/app/brt/{{item.id_berita}}">
+          {{item.judul}}</a> |
+      </span> 
+  </marquee></div>
+
+</div>
+</ion-footer-bar>
+</ion-view>

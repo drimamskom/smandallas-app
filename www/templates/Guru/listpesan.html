@@ -1,0 +1,67 @@
+<ion-view view-title="
+<ion-header-bar>
+
+   <a class="item no-padding" id="header">
+       <img src="img/header.jpeg">
+     
+    </a>
+</ion-header-bar>"  cache-view="false">
+<ion-nav-title> {{title}} </ion-nav-title>
+  <ion-content  class="has-header padding has-footer " scroll="false">
+
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+
+
+<div class="item-input-inset " style="padding:0px !important;">
+    <label class="item-input-wrapper ">
+      <input  type="search" placeholder="Cari" ng-model="searchFilter">
+    </label>
+  </div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+
+<div ion-list>
+  <div class="item" ng-repeat='p in pp | filter:searchFilter' ui-sref="guru.pesan({id:'{{p.IDpesan}}'})">
+<b ng-if='p.status == 0'>{{p.PESAN}}</b>
+{{p.PESAN}}
+  </div>
+</div>
+
+  </ion-content>
+     <div class="bar bar-subfooter">
+        <div class="list">
+          <div class="button-bar bottom social-login" style="position: fixed; bottom: 1;">
+    <a class="button  button-positive icon-left ion-refresh" ng-click="pesanc()">Refresh</a>
+  <a class="button  button-positive icon-left ion-home"  ng-href="#/guru/home/{{level}}/{{nis}}">Home</a>
+</div>
+        </div>
+      </div>
+     <ion-footer-bar class="bar-stable" tap-scroll="false">
+  <div class = "row">
+   <div class = "col">    <marquee>
+ <span ng-repeat="item in berita">
+ <a href="#/app/brt/{{item.id_berita}}">
+          {{item.judul}}</a> |
+      </span> 
+  </marquee></div>
+
+</div>
+</ion-footer-bar>
+</ion-view>

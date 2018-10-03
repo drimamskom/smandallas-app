@@ -1,0 +1,125 @@
+<ion-view view-title="
+<ion-header-bar >
+
+    <a class="item no-padding" >
+       <img src="img/header.jpeg" width="100%" height="17%" >
+     
+    </a>
+</ion-header-bar>"  >
+<ion-nav-title> {{title}} </ion-nav-title>
+  <ion-content  class="has-header padding has-footer ">
+ <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col">
+   </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+
+  <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="shownis()">
+          </ion-refresher>
+  
+
+       <div class="card">
+    <ion-list ng-repeat="data in siswa">
+                <label class="item item-input" >
+                    <span class="input-label">NIS   :</span>
+                    <input type="text"  ng-value="data.NIK">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">NAMA  :</span>
+                    <input type="text"  ng-value="data.NAMA">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Alamat  :</span>
+                    <input type="text"  ng-value="data.Alamat">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Kelas   :</span>
+                    <input type="text" ng-init="d.kel=data.KELAS" ng-model="d.kel" init-from-form>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Ortu Siswa  :</span>
+                    <input type="text"  ng-value="data.Alamat">
+                </label>
+                  <label class="item item-input">
+                    <span class="input-label">HP Ortu   :</span>
+                    <input type="text" ng-value="data.hportu">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">HP Siswa  :</span>
+                    <input type="text" ng-value="data.hpsiswa">
+                </label>
+               
+                
+            </ion-list>
+  </div>
+
+
+    </ion-scroll>
+    <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+  
+  </ion-content>
+ <div class="bar bar-subfooter">
+        <div class="list">
+          <div class="button-bar bottom social-login" style="position: fixed; bottom: 1;">
+       <a class="button  button-positive icon-left ion-refresh" ng-click="lskelas()">Refresh</a>
+  <a class="button  button-positive icon-left ion-home"  ng-href="#/BK/home/{{level}}/{{nis}}">Home</a>
+</div>
+        </div>
+      </div>
+     <ion-footer-bar class="bar-stable" tap-scroll="false">
+  <div class = "row">
+   <div class = "col">   <marquee>
+ <span ng-repeat="item in berita">
+ <a href="#/app/brt/{{item.id_berita}}">
+          {{item.judul}}</a> |
+      </span> 
+  </marquee></div>
+
+</div>
+</ion-footer-bar>
+</ion-view>

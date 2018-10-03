@@ -1,0 +1,94 @@
+<ion-view view-title="
+<ion-header-bar>
+
+   <a class="item no-padding" id="header">
+       <img src="img/header.jpeg">
+     
+    </a>
+</ion-header-bar>"  >
+<ion-nav-title> {{title}} </ion-nav-title>
+   <ion-content  class="has-header padding has-footer " scroll="false">
+
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+
+
+<div class="item-input-inset " style="padding:0px !important;">
+    <label class="item-input-wrapper ">
+      <input  type="search" placeholder="Cari" ng-model="searchFilter">
+    </label>
+  </div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+
+        <div class="row header positive" style="background-color:lightgrey;">
+          <div class="col" style="border: solid 1px grey;">Tanggal</div>
+          <div class="col" style="border: solid 1px grey;">Nama</div>
+          <div class="col" style="border: solid 1px grey;">Keterangan</div>
+         
+        </div>
+    <ion-scroll direction="xy" id="map_content">
+        <div class="row" ng-repeat="data in kalender | filter:searchFilter"  ng-style="{'background-color':($index % 2 === 0 ? 'white' :'#D8E2E9')}">
+          <div class="col" style="border: solid 1px grey;">{{data.Tanggal}}</div>
+          <div class="col" style="border: solid 1px grey;">{{data.Nama}}</div>
+        <div class="col" style="border: solid 1px grey;">{{data.Keterangan}}</div>
+        <!--<div class="col" style="border: solid 1px grey;"><button class="button button-icon ion-arrow-right-b"></button></div>-->
+        </div>
+         
+      </div>
+
+    </ion-scroll>
+    <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+  
+  </ion-content>
+ <div class="bar bar-subfooter">
+        <div class="list">
+          <div class="button-bar bottom social-login" style="position: fixed; bottom: 1;">
+    <a class="button  button-positive icon-left ion-refresh" ng-click="lskelas2()">Refresh</a>
+  <a class="button  button-positive icon-left ion-home"  ng-href="#/guru/home/{{level}}/{{nis}}">Home</a>
+</div>
+        </div>
+      </div>
+     <ion-footer-bar class="bar-stable" tap-scroll="false">
+  <div class = "row">
+   <div class = "col">    <marquee>
+ <span ng-repeat="item in berita">
+ <a href="#/app/brt/{{item.id_berita}}">
+          {{item.judul}}</a> |
+      </span> 
+  </marquee></div>
+
+</div>
+</ion-footer-bar>
+</ion-view>

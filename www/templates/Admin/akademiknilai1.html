@@ -1,0 +1,113 @@
+<ion-view view-title="
+<ion-header-bar >
+
+   <a class="item no-padding" id="header">
+       <img src="img/header.jpeg">
+     
+    </a>
+</ion-header-bar>"  >
+<ion-nav-title> {{title}} </ion-nav-title>
+  <ion-content  class="has-header padding has-footer ">
+  <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col">
+   </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col col-75"></div>
+</div>
+
+
+
+
+
+  <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="shownis()">
+          </ion-refresher>
+<div class="list">
+  <div class="item">
+    <p align="center"> Daftar Pelajaran Kelas {{kelas}}</p>
+ </div>
+
+</div>
+        <div class="row header positive" style="background-color:lightgrey;">
+          <div class="col col-25" style="border: solid 1px grey;">Pelajaran</div>
+          <div class="col col-50" style="border: solid 1px grey;">Guru</div>
+          <div class="col col-25 " style="border: solid 1px grey;">Hari</div>
+         
+        </div>
+    <ion-scroll direction="xy" id="map_content">
+        <div class="row" ng-repeat="data in jadwal| filter:searchFilter" ui-sref="admin.akademiknilai2({kel:kelas, pel:data.NIG, pela:data.PELAJARAN})">
+          <div class="col col-25" style="border: solid 1px grey;">{{data.PELAJARAN}}</div>
+          <div class="col col-50" style="border: solid 1px grey;">{{data.NAMA}}</div>
+        <div class="col col-25" style="border: solid 1px grey;">{{data.HARI}}</div>
+        <!--<div class="col" style="border: solid 1px grey;"><button class="button button-icon ion-arrow-right-b"></button></div>-->
+        </div>
+         
+      </div>
+
+    </ion-scroll>
+    <div class="row">
+  <div class="col col-50"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+<div class="row">
+  <div class="col"></div>
+  <div class="col col-75"></div>
+</div>
+  
+  </ion-content>
+ <div class="bar bar-subfooter">
+        <div class="list">
+          <div class="button-bar bottom social-login" style="position: fixed; bottom: 1;">
+    <a class="button  button-positive icon-left ion-refresh" ng-click="lskelas()">Refresh</a>
+  <a class="button  button-positive icon-left ion-home"  ng-href="#/admin/home">Home</a>
+</div>
+        </div>
+      </div>
+     <ion-footer-bar class="bar-stable" tap-scroll="false">
+  <div class = "row">
+   <div class = "col">    <marquee>
+ <span ng-repeat="item in berita">
+ <a href="#/app/brt/{{item.id_berita}}">
+          {{item.judul}}</a> |
+      </span> 
+  </marquee></div>
+
+</div>
+</ion-footer-bar>
+</ion-view>

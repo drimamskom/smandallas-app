@@ -1,0 +1,60 @@
+<ion-view title="
+<ion-header-bar>
+<div class="list">
+    <a class="item item-thumbnail-left">
+      <img src="img/logo.png">
+      <h2>SMKN 1 SURABAYA</h2>
+      <p>www.smkn1surabaya.sch.id</p>
+             <p> Jl. SMEA No. 4, Wonokromo, Kota SBY,
+Jawa Timur 60243</p>
+    </a>
+</div> </ion-header-bar>"  >
+    <ion-content  class="has-subheader has-footer">
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">NIS</span>
+                    <input type="text" placeholder="" ng-model="login.nis">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="" ng-model="login.password">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Masuk sebagai:</span>
+                    <ion-item class="item-input item-select item-right">
+    <div class="input-label">
+   
+    <select ng-model="login.level" class="item-select item">
+          <option  ng-value="'SISWA'">Siswa</option>
+        <option ng-value="'WALI SISWA'" >Wali Siswa</option>
+        <option  ng-value="'GURU'" >Guru</option>
+        <option  ng-value="'BK'" >BK</option>
+         <option  ng-value="'ADMIN'" >Admin</option>
+       
+        </select> 
+ </div>
+    </ion-item>
+                </label>
+                 <label class="item item-input">
+                    <span class="input-label"></span>
+                    <a>reset&nbsp;</a><br>
+                    <ion-checkbox >Auto Sign In</ion-checkbox>
+                </label>
+                
+            </ion-list>
+            <div class="spacer" style="height: 40px;"></div>
+            <a ng-click="loginc();" id="login-button1" class="button button-stable  button-block">Log in</a>
+            <a href="#/register" id="login-button2" class="button button-positive  button-block button-clear">Or create an account</a>
+        </form>
+    </ion-content>
+     <ion-footer-bar class="bar-stable">
+
+  <marquee>
+ <span ng-repeat="item in berita">
+ <a href="#/berita/{{item.id_berita}}">
+          {{item.judul}}</a> |
+      </span> 
+  </marquee>
+
+</ion-footer-bar>
+</ion-view>

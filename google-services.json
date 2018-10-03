@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "83730644791",
+    "firebase_url": "https://sekolah-318b1.firebaseio.com",
+    "project_id": "sekolah-318b1",
+    "storage_bucket": "sekolah-318b1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:83730644791:android:cac3a7c1e702daf3",
+        "android_client_info": {
+          "package_name": "com.sisfosekolah.mob"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "83730644791-hm8ak26ui9njr63ivc31s3oamoppc2h6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCJYfIuQDDqO3nYBTZCeeOKgESaxrWAdQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
