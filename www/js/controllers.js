@@ -316,7 +316,7 @@ $scope.tok();
             console.log('nilai', nilai);
             if (nilai === 'NRAPORTK') {
                 $ionicLoading.show();
-                sekolahService.rekap($stateParams.kelas, $scope.nis, nilai, $scope.jurusan).success(function(rekap) {
+                sekolahService.rekap($stateParams.kelas, $scope.nis, nilai).success(function(rekap) {
                     $scope.rekap = rekap;
                     1
                     console.log('nilai', $scope.nilai);
