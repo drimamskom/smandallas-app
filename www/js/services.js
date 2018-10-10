@@ -178,7 +178,7 @@ angular.module('starter.services', [])
             return $http.get(baseUrl+'rekapabsen.php?kel='+kel+'&jur='+jur); 
         },
         rekap: function (kel,pel,nilai){
-            return $http.get(baseUrl+'rkp.php?kel='+kel+'&pel='+pel+'&nilai='+nilai+'&jur='+jur); 
+            return $http.get(baseUrl+'rkp.php?kel='+kel+'&pel='+pel+'&nilai='+nilai); 
         },
 
         // services untuk wali siswa
