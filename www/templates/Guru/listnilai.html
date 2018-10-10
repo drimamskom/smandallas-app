@@ -1,11 +1,12 @@
 <ion-view view-title=
 <ion-header-bar >
 
-   <a class="item no-padding" id="header">
-       <img src="img/header.jpeg">
+   
+   <a id="header">
+       <img src="img/header.jpeg" width="100%">
      
     </a>
-</ion-header-bar>  
+</ion-header-bar> 
 <ion-nav-title> {{title}} </ion-nav-title>
   <ion-content  class="has-header padding has-footer " scroll="false">
 
@@ -31,41 +32,25 @@
   <div class="item">
     <p align="center"> {{pelajaran}} {{kelas}}</p>
  </div>
+<ion-tabs class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
 
+        <ion-tab title="KI3" ui-sref='guru.listnilai.k13-tab'>
+          <ion-nav-view name="k13-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="KI4" ui-sref='guru.listnilai.k14-tab'>
+          <ion-nav-view name="k14-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="sikap" ui-sref='guru.listnilai.sikap-tab'>
+          <ion-nav-view name="sikap-tab"></ion-nav-view>
+        </ion-tab>
+
+      </ion-tabs>
 </div>
-        <div class="row header positive" style="background-color:lightgrey;">
-          <div class="col col-20" style="border: solid 1px grey;">NIS</div>
-          <div class="col col-25" style="border: solid 1px grey;">Nama</div>
-          <div class="col" style="border: solid 1px grey;">KD1</div>
-          <div class="col" style="border: solid 1px grey;">KD2</div>
-          <div class="col" style="border: solid 1px grey;">KD3</div>
-          <div class="col" style="border: solid 1px grey;">KD4</div>
-          <div class="col" style="border: solid 1px grey;">R KI3</div>
-          <div class="col" style="border: solid 1px grey;">R KI4</div>
-        </div>
-    <ion-scroll direction="xy" style="margin-bottom:100px;height: 60%;">
-        <div class="row" ng-repeat="data in lskelas" ui-sref="guru.entry({nis:data.NIS})"  ng-style="{'background-color':($index % 2 === 0 ? 'white' :'#D8E2E9')}">
-          <div class="col col-20" style="border: solid 1px grey;">{{data.NIS}}</div>
-          <div class="col col-25" style="border: solid 1px grey;">{{data.NAMA}}</div>
-          <div class="col col-10" style="border: solid 1px grey;">{{data.KDK}}</div>
-          <div class="col" style="border: solid 1px grey;">{{data.KDP}}</div>
-          <div class="col" style="border: solid 1px grey;">{{data.KDA}}</div>
-          <div class="col" style="border: solid 1px grey;">{{data.UTSK}}</div>
-          <div class="col" style="border: solid 1px grey;">{{data.UASP}}</div>
-          <div class="col" style="border: solid 1px grey;">{{data.NRAPORTK}}</div>
-        <!--<div class="col" style="border: solid 1px grey;"><button class="button button-icon ion-arrow-right-b"></button></div>-->
-        </div>
-         
-      </div>
+ 
 
-    </ion-scroll>
-    <div class="row">
-  <div class="col col-50"></div>
-  <div class="col"></div>
-  <div class="col"></div>
-</div>
-
-
+   
 
 <div class="row">
   <div class="col"></div>
