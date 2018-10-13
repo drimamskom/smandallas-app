@@ -414,17 +414,9 @@ FCMPlugin.onNotification(function(data) {
   }
 }
 })
-.state('guru.listnilai.k13-tab', {
-      url: '/list_nilai/:kelas',
-      views: {
-        'k13-tab': {
-          templateUrl: "templates/Guru/listnilai_K13.html",
-          controller: 'listnilaiCtrl'
-        }
-      }
-    })
-.state('guru.listnilai.k14-tab', {
-      url: '/list_nilai/:kelas',
+.state('guru.listnilaik14', {
+   cache: false,
+      url: '/list_nilai/:kelas/k14',
       views: {
         'k14-tab': {
           templateUrl: "templates/Guru/listnilai_K14.html",
@@ -432,8 +424,9 @@ FCMPlugin.onNotification(function(data) {
         }
       }
     })
-.state('guru.listnilai.sikap-tab', {
-      url: '/list_nilai/:kelas',
+.state('guru.listnilaiSikap', {
+   cache: false,
+      url: '/list_nilai/:kelas/sikap',
       views: {
         'sikap-tab': {
           templateUrl: "templates/Guru/listnilai_sikap.html",

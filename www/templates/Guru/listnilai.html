@@ -32,24 +32,57 @@
   <div class="item">
     <p align="center"> {{pelajaran}} {{kelas}}</p>
  </div>
-<ion-tabs class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+<!-- <ion-tabs class="tabs-striped tabs-positive tabs-color-light">
 
-        <ion-tab title="KI3" ui-sref='guru.listnilai.k13-tab'>
-          <ion-nav-view name="k13-tab"></ion-nav-view>
+        <ion-tab title="KI3" >
+       
         </ion-tab>
 
-        <ion-tab title="KI4" ui-sref='guru.listnilai.k14-tab'>
-          <ion-nav-view name="k14-tab"></ion-nav-view>
+        <ion-tab title="KI4" ui-sref='guru.listnilaik14'>
+         
         </ion-tab>
 
-        <ion-tab title="sikap" ui-sref='guru.listnilai.sikap-tab'>
-          <ion-nav-view name="sikap-tab"></ion-nav-view>
+        <ion-tab title="sikap" ui-sref='guru.listnilaisikap'>
+        
         </ion-tab>
 
-      </ion-tabs>
+      </ion-tabs> -->
+      <div class="tabs tabs-striped tabs-positive  static">
+            <a class="tab-item">
+                KI3
+            </a>
+            <a ui-sref="guru.listnilaik14({kelas:kelas})" class="tab-item">
+               KI4
+            </a>
+            <a ui-sref="guru.listnilaiSikap({kelas:kelas})" class="tab-item">
+               SIKAP
+            </a>
+        </div>
+        
 </div>
- 
-
+         <div class="row header positive" style="background-color:lightgrey;">
+          <div class="col" style="border: solid 1px grey;max-width :15% !important;text-align: center">NIS</div>
+          <div class="col" style="border: solid 1px grey;max-width :25% !important;text-align: center">Nama</div>
+          <div class="col" style="border: solid 1px grey;max-width :10% !important;text-align: center">K1</div>
+          <div class="col" style="border: solid 1px grey;max-width :10% !important;text-align: center">K2</div>
+          <div class="col" style="border: solid 1px grey;max-width :10% !important;text-align: center">K3</div>
+          <div class="col" style="border: solid 1px grey;max-width :10% !important;text-align: center">K4</div>
+          <div class="col" style="border: solid 1px grey;max-width :10% !important;text-align: center">RI3</div>
+          <div class="col" style="border: solid 1px grey;max-width :10% !important;text-align: center">RI4</div>
+        </div>
+    <ion-scroll direction="xy" style="margin-bottom:100px;height: 55%;">
+        <div class="row" ng-repeat="data in lskelas" ui-sref="guru.entry({nis:data.NIS})"  ng-style="{'background-color':($index % 2 === 0 ? 'white' :'#D8E2E9')}">
+          <div class="col col-15" style="border: solid 1px grey;max-width :15% !important">{{data.NIS}}</div>
+          <div class="col col-25" style="border: solid 1px grey;max-width :25% !important;">{{data.NAMA}}</div>
+          <div class="col col-10" style="border: solid 1px grey;max-width :10% !important;text-align: center">{{data.KDK}}</div>
+          <div class="col col-10" style="border: solid 1px grey;max-width :10% !important;text-align: center">{{data.KDP}}</div>
+          <div class="col col-10" style="border: solid 1px grey;max-width :10% !important;text-align: center">{{data.KDA}}</div>
+          <div class="col col-10" style="border: solid 1px grey;max-width :10% !important;text-align: center">{{data.UTSK}}</div>
+          <div class="col col-10" style="border: solid 1px grey;max-width :10% !important;text-align: center">{{data.UASP}}</div>
+          <div class="col col-10" style="border: solid 1px grey;max-width :10% !important;text-align: center">{{data.NRAPORTK}}</div>        <!--<div class="col" style="border: solid 1px grey;"><button class="button button-icon ion-arrow-right-b"></button></div>-->
+        </div>
+         
+      </div>
    
 
 <div class="row">
