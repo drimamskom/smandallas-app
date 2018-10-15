@@ -251,6 +251,26 @@ FCMPlugin.onNotification(function(data) {
   }
 }
 })
+.state('app.nilaik14', {
+    cache: false,
+    url: '/nilai/:level/:nis',
+    views: {
+        'menuContent': {
+    templateUrl: 'templates/Siswa/nilai_K14.html',
+    controller: 'nilaiK14Ctrl'
+  }
+}
+})
+.state('app.nilaiSikap', {
+    cache: false,
+    url: '/nilai/:level/:nis',
+    views: {
+        'menuContent': {
+    templateUrl: 'templates/Siswa/nilai_sikap.html',
+    controller: 'nilaiSikapCtrl'
+  }
+}
+})
 .state('app.kalender', {
     cache: false,
     url: '/kalender',

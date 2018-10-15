@@ -2800,7 +2800,55 @@ $scope.tok();
         $scope.berita();
     }).controller('nilaiCtrl', function($scope, $ionicLoading, $ionicLoading, $stateParams, $state, sekolahService) {
 
-        $scope.title = 'NILAI';
+        $scope.title = 'NILAI KI3';
+        $scope.nis = window.localStorage.getItem('nis');
+        $scope.level = window.localStorage.getItem('level');
+        $scope.jurusan = window.localStorage.getItem('jurusan');
+
+        $scope.shownis = function() {
+            $ionicLoading.show();
+            sekolahService.nilai($stateParams.nis, $scope.jurusan).success(function(nilai) {
+                $scope.nilai = nilai;
+                if($scope.nilai.length > 1){
+                console.log('nl', $scope.nilai)
+                $ionicLoading.hide();                    
+                }
+            });
+        };
+        $scope.shownis();
+        $scope.berita = function() {
+            sekolahService.berita().success(function(berita) {
+                $scope.berita = berita;
+            });
+        };
+        $scope.berita();
+    }).controller('nilaiK14Ctrl', function($scope, $ionicLoading, $ionicLoading, $stateParams, $state, sekolahService) {
+
+        $scope.title = 'NILAI KI4';
+        $scope.nis = window.localStorage.getItem('nis');
+        $scope.level = window.localStorage.getItem('level');
+        $scope.jurusan = window.localStorage.getItem('jurusan');
+
+        $scope.shownis = function() {
+            $ionicLoading.show();
+            sekolahService.nilai($stateParams.nis, $scope.jurusan).success(function(nilai) {
+                $scope.nilai = nilai;
+                if($scope.nilai.length > 1){
+                console.log('nl', $scope.nilai)
+                $ionicLoading.hide();                    
+                }
+            });
+        };
+        $scope.shownis();
+        $scope.berita = function() {
+            sekolahService.berita().success(function(berita) {
+                $scope.berita = berita;
+            });
+        };
+        $scope.berita();
+    }).controller('nilaiSikapCtrl', function($scope, $ionicLoading, $ionicLoading, $stateParams, $state, sekolahService) {
+
+        $scope.title = 'NILAI SIKAP';
         $scope.nis = window.localStorage.getItem('nis');
         $scope.level = window.localStorage.getItem('level');
         $scope.jurusan = window.localStorage.getItem('jurusan');
