@@ -21,13 +21,13 @@
 <div>
 <div class="tabs tabs-top tabs-striped tabs-positive  static" style="height: 40px !important;">
             <a ui-sref="app.nilai({nis:nis, level:level})" class="tab-item">
-                KI3
+                Pengetahuan
             </a>
             <a ui-sref="app.nilaik14({nis:nis, level:level})" class="tab-item">
-               KI4
+               Ketrampilan
             </a>
             <a ui-sref="app.nilaiSikap({nis:nis, level:level})" class="tab-item">
-               SIKAP
+               Sikap
             </a>
         </div>
 <div class="item-input-inset " style="padding:0px !important;margin-top:50px;">
@@ -46,25 +46,25 @@
 </div>
 
         <div class="row header positive" style="background-color:lightgrey;"  ng-show="nilai.length > 1">
-          <div class="col col-25" style="border: solid 1px grey;">Pelajaran</div>
+          <div class="col col-25" style="border: solid 1px grey;text-align: center;">Pelajaran</div>
 
-          <div class="col" style="border: solid 1px grey;">KD1</div>
-          <div class="col" style="border: solid 1px grey;">KD2</div>
-          <div class="col" style="border: solid 1px grey;">KD3</div>
-          <div class="col" style="border: solid 1px grey;">KD4</div>
-          <div class="col" style="border: solid 1px grey;">R KI3</div>
-          <div class="col" style="border: solid 1px grey;">R KI4</div>
+          <div class="col" style="border: solid 1px grey;text-align: center;">KD1</div>
+          <div class="col" style="border: solid 1px grey;text-align: center;">KD2</div>
+          <div class="col" style="border: solid 1px grey;text-align: center;">KD3</div>
+          <div class="col" style="border: solid 1px grey;text-align: center;">KD4</div>
+          <div class="col" style="border: solid 1px grey;text-align: center;">KD5</div>
+          <div class="col" style="border: solid 1px grey;text-align: center;">Rap</div>
         </div>
     <ion-scroll direction="xy" ng-show="nilai.length > 1" vs-repeat="{scrollParent: 'window', size: 20}">
          <div class="row" ng-repeat="data in nilai  | filter:searchFilter" style="border: solid 1px grey;" ng-style="{'background-color':($index % 2 === 0 ? 'white' :'#D8E2E9')}">
           <div class="col col-25" >{{data.PELAJARAN }}</div>
        
-          <div class="col" style="border: solid 1px grey;">{{data.KDK}}</div>
-          <div class="col" style="border: solid 1px grey;">{{data.KDP}}</div>
-          <div class="col" style="border: solid 1px grey;">{{data.KDA}}</div>
-          <div class="col" style="border: solid 1px grey;">{{data.UTSK}}</div>
-          <div class="col" style="border: solid 1px grey;">{{data.UASP}}</div>
-          <div class="col" style="border: solid 1px grey;border-right: 0px;">{{data.NRAPORTK}}</div>
+          <div class="col" style="border: solid 1px grey;text-align: center;">{{data.KDK}}</div>
+          <div class="col" style="border: solid 1px grey;text-align: center;">{{data.KDP}}</div>
+          <div class="col" style="border: solid 1px grey;text-align: center;">{{data.KDA}}</div>
+          <div class="col" style="border: solid 1px grey;text-align: center;">{{data.UTSK}}</div>
+          <div class="col" style="border: solid 1px grey;text-align: center;">{{data.UASP}}</div>
+          <div class="col" style="border: solid 1px grey;border-right: 0px;text-align: center;">{{data.NRAPORTK}}</div>
       </div>
        
     <div class="row" ng-repeat="data in nilai | filter:searchFilter" ng-show="data.status === '1'" ng-style="{'background-color':($index % 2 === 0 ? 'white' :'#D8E2E9')}"  >
