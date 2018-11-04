@@ -56,8 +56,8 @@
          <div class="row" ng-repeat="data in nilai  | filter:searchFilter" style="border: solid 1px grey;" ng-style="{'background-color':($index % 2 === 0 ? 'white' :'#D8E2E9')}">
           <div class="col col-25" >{{data.PELAJARAN }}</div>
        
-          <div class="col" style="border: solid 1px grey;text-align: center;">{{data.KDK}}</div>
-          <div class="col" style="border: solid 1px grey;text-align: center;">{{data.KDP}}</div>          
+          <div class="col" style="border: solid 1px grey;text-align: center;">{{data.R2UTSP}}</div>
+          <div class="col" style="border: solid 1px grey;text-align: center;">{{data.R2UTSA}}</div>          
       </div>
        
     <div class="row" ng-repeat="data in nilai | filter:searchFilter" ng-show="data.status === '1'" ng-style="{'background-color':($index % 2 === 0 ? 'white' :'#D8E2E9')}"  >
